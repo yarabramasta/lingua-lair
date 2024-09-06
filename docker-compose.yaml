@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    env_file: ./.env.local
+    ports:
+      - "5432:5432"
+    volumes:
+      - linguadb:/var/lib/postgresql/data
+
+volumes:
+  linguadb:
