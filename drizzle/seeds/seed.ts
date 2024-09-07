@@ -1,8 +1,9 @@
 import { hash } from '@node-rs/argon2'
+
 import { db } from '~/lib/db'
 import {
   flags,
-  glossaries,
+  lairs,
   languages,
   tokens,
   users,
@@ -38,7 +39,6 @@ async function setupSudoAccount() {
     .insert(users)
     .values({
       username: 'sudo',
-      avatar: 'https://avatars.jakerunzer.com/sudo',
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
       passwordHash: await hash(process.env.SUDO_ACCOUNT_PASSWORD!, {
         memoryCost: 19456,
@@ -65,7 +65,7 @@ async function setupExampleLair(userId: string) {
 
   await db.transaction(async tx => {
     const [{ id: lairId }] = await tx
-      .insert(glossaries)
+      .insert(lairs)
       .values({
         userId,
         name: 'Example Lair',
@@ -73,8 +73,8 @@ async function setupExampleLair(userId: string) {
           'This is an example lair. Lair is a collection of languages that share the same glossary (i18n tokens).\n\nYou can always modify or delete this lair and create your own.',
         slug: 'example_lair'
       })
-      .onConflictDoNothing({ target: glossaries.slug })
-      .returning({ id: glossaries.id })
+      .onConflictDoNothing({ target: lairs.slug })
+      .returning({ id: lairs.id })
 
     const { id: flagId } = await tx.query.flags
       .findFirst({
@@ -88,7 +88,7 @@ async function setupExampleLair(userId: string) {
     const [{ id: langId }] = await tx
       .insert(languages)
       .values({
-        glossaryId: lairId,
+        lairId,
         flagId,
         code: 'en_US',
         name: 'English (United States)',

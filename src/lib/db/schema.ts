@@ -31,7 +31,6 @@ export const users = auth$.table('users', {
     .$default(() => generateIdFromEntropySize(16)),
 
   username: text('username').unique().notNull(),
-  avatar: text('avatar').notNull(),
   passwordHash: text('password_hash').notNull(),
 
   createdAt: timestamp('created_at', { withTimezone: true, precision: 3 })
@@ -45,7 +44,7 @@ export const users = auth$.table('users', {
 
 export const usersRelations = relations(users, ({ many }) => ({
   sessions: many(sessions),
-  glossaries: many(glossaries)
+  lairs: many(lairs)
 }))
 
 export const sessions = auth$.table('sessions', {
@@ -69,8 +68,8 @@ export const sessionsRelations = relations(sessions, ({ one }) => ({
 
 export const lingua$ = pgSchema('lingua')
 
-export const glossaries = lingua$.table(
-  'glossaries',
+export const lairs = lingua$.table(
+  'lairs',
   {
     id: serial('id').primaryKey(),
     userId: text('user_id')
@@ -83,6 +82,7 @@ export const glossaries = lingua$.table(
     slug: text('slug').unique().notNull(),
     name: text('name').notNull(),
     description: text('description').notNull(),
+    primary: boolean('primary').default(false).notNull(),
 
     createdAt: timestamp('created_at', {
       withTimezone: true,
@@ -97,9 +97,9 @@ export const glossaries = lingua$.table(
   })
 )
 
-export const glossariesRelations = relations(glossaries, ({ one, many }) => ({
+export const lairsRelations = relations(lairs, ({ one, many }) => ({
   user: one(users, {
-    fields: [glossaries.userId],
+    fields: [lairs.userId],
     references: [users.id]
   }),
   languages: many(languages)
@@ -109,9 +109,9 @@ export const languages = lingua$.table(
   'languages',
   {
     id: serial('id').primaryKey(),
-    glossaryId: bigint('glossary_id', { mode: 'number' })
+    lairId: bigint('lair_id', { mode: 'number' })
       .notNull()
-      .references(() => glossaries.id, {
+      .references(() => lairs.id, {
         onDelete: 'cascade',
         onUpdate: 'no action'
       }),
@@ -141,9 +141,9 @@ export const languages = lingua$.table(
 )
 
 export const languagesRelations = relations(languages, ({ one, many }) => ({
-  glossary: one(glossaries, {
-    fields: [languages.glossaryId],
-    references: [glossaries.id]
+  lair: one(lairs, {
+    fields: [languages.lairId],
+    references: [lairs.id]
   }),
   tokens: many(tokens),
   versions: many(versions),

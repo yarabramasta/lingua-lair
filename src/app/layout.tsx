@@ -1,9 +1,10 @@
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 
 import { cn } from '~/utils/cn'
-import { geistMono, geistSans } from './fonts'
 
-import './globals.css'
+import '~/styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'Lingua Lair',
@@ -17,8 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          geistSans.variable,
-          geistMono.variable,
+          GeistSans.variable,
+          GeistMono.variable,
           'min-h-dvh overflow-x-hidden bg-background font-sans text-foreground antialiased'
         )}
       >

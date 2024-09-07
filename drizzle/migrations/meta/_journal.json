@@ -15,6 +15,13 @@
       "when": 1725620888865,
       "tag": "0001_moaning_warbound",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1725699366018,
+      "tag": "0002_dazzling_arclight",
+      "breakpoints": true
     }
   ]
 }

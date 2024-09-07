@@ -10,6 +10,7 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
   output: !process.env.VERCEL_ENV ? 'standalone' : undefined,
+  transpilePackages: ['geist'],
   experimental: {
     serverComponentsExternalPackages: ['@node-rs/argon2']
   },
