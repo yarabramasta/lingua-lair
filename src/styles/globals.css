@@ -1,3 +1,179 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --bg: 0 0% 98%;
+    --shadcn-bg: #fafafa;
+    --fg: 30 8% 5%;
+    --shadcn-fg: #0e0d0c;
+
+    --muted: 60 6% 93%;
+    --shadcn-muted: #eeeeec;
+    --muted-fg: 43 6% 45%;
+    --shadcn-muted-fg: #7a766c;
+
+    --popover: 0 7% 97%;
+    --shadcn-popover: #f8f7f7;
+    --popover-fg: 30 8% 5%;
+    --shadcn-popover-fg: #0e0d0c;
+
+    --card: 0 7% 97%;
+    --shadcn-card: #f8f7f7;
+    --card-fg: 30 8% 5%;
+    --shadcn-card-fg: #0e0d0c;
+
+    --border: 40 6% 90%;
+    --shadcn-border: #e7e6e4;
+    --input: 50 7% 82%;
+    --shadcn-input: #d4d3ce;
+
+    --ring: 45 24% 74%;
+    --shadcn-ring: #cdc5ad;
+
+    --primary: 45 11% 14%;
+    --shadcn-primary: #282620;
+    --primary-fg: 0 0% 98%;
+    --shadcn-primary-fg: #fafafa;
+
+    --secondary: 48 11% 91%;
+    --shadcn-secondary: #ebeae6;
+    --secondary-fg: 30 8% 5%;
+    --shadcn-secondary-fg: #0e0d0c;
+
+    --accent: 51 11% 88%;
+    --shadcn-accent: #e3e2dc;
+    --accent-fg: 30 8% 5%;
+    --shadcn-accent-fg: #0e0d0c;
+
+    --destructive: 10 78% 54%;
+    --shadcn-destructive: #e54d2e;
+    --destructive-fg: 7 100% 98%;
+    --shadcn-destructive-fg: #fff8f7;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  :root {
+    --radix-txt-12: 45 12% 13%;
+    --radix-txt-12-hex: #26241e;
+    --radix-txt-11: 47 8% 35%;
+    --radix-txt-11-hex: #605252;
+
+    --radix-solid-10: 40 8% 22%;
+    --radix-solid-10-hex: #3d3a34;
+    --radix-solid-9: var(--primary);
+    --radix-solid-9-hex: var(--shadcn-primary);
+
+    --radix-border-8: 48 9% 68%;
+    --radix-border-8-hex: #b4b1a5;
+    --radix-border-7: 45 13% 76%;
+    --radix-border-7-hex: #c9c5b9;
+    --radix-border-6: 42 13% 81%;
+    --radix-border-6-hex: #d4d0c7;
+
+    --radix-comp-5: 42 13% 84%;
+    --radix-comp-5-hex: #dcd9d2;
+    --radix-comp-4: var(--accent);
+    --radix-comp-4-hex: var(--shadcn-accent);
+    --radix-comp-3: var(--secondary);
+    --radix-comp-3-hex: var(--shadcn-secondary);
+
+    --radix-bg-2: 40 12% 95%;
+    --radix-bg-2-hex: #f4f3f1;
+    --radix-bg-1: 60 7% 97%;
+    --radix-bg-1-hex: #f8f8f7;
+  }
+}
+
+@layer base {
+  .sonner-loading-bar {
+    --gray11: var(--shadcn-muted-fg);
+  }
+}
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-background: hsl(var(--bg));
+  --color-foreground: hsl(var(--fg));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-fg));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-fg));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-fg));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-fg));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-fg));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-fg));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-fg));
+
+  --color-radix-txt-12: hsl(var(--radix-txt-12));
+  --color-radix-txt-11: hsl(var(--radix-txt-11));
+
+  --color-radix-solid-10: hsl(var(--radix-solid-10));
+  --color-radix-solid-9: hsl(var(--radix-solid-9));
+
+  --color-radix-border-8: hsl(var(--radix-border-8));
+  --color-radix-border-7: hsl(var(--radix-border-7));
+  --color-radix-border-6: hsl(var(--radix-border-6));
+
+  --color-radix-comp-5: hsl(var(--radix-comp-5));
+  --color-radix-comp-4: hsl(var(--radix-comp-4));
+  --color-radix-comp-3: hsl(var(--radix-comp-3));
+
+  --color-radix-bg-2: hsl(var(--radix-bg-2));
+  --color-radix-bg-1: hsl(var(--radix-bg-1));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+
+  --font-family-sans: var(--font-geist-sans);
+  --font-family-mono: var(--font-geist-mono);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: '0';
+    }
+  }
+}
+
+.border {
+  border-color: hsl(var(--border));
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,19 +1,37 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
+import type { inferServerActionReturnData } from 'zsa'
 
-import { SESSION_COOKIE_LIFETIME_SECONDS } from '~/utils/constants'
+import type { getSessionAction } from '~/actions/auth/session'
+import {
+  SESSION_COOKIE_LIFETIME_SECONDS,
+  SESSION_COOKIE_NAME
+} from '~/utils/constants'
 import { getBaseUrl } from '~/utils/url'
 
-export const authMiddleware = async (req: NextRequest) => {
-  const res = NextResponse.next()
+type GetSessionActionReturnData = inferServerActionReturnData<
+  typeof getSessionAction
+>
 
-  await fetch(`${getBaseUrl()}/api/auth/session`, {
+export const authMiddleware = async (req: NextRequest) => {
+  const next = NextResponse.next()
+
+  const res = await fetch(`${getBaseUrl()}/api/auth/session`, {
     headers: { cookie: req.cookies.toString() },
     next: {
       tags: ['auth_session'],
       revalidate: SESSION_COOKIE_LIFETIME_SECONDS
     }
-  }).then(async res => (res.ok ? await res.json() : null))
+  })
 
-  return res
+  if (res.ok) {
+    const json = (await res.json()) as GetSessionActionReturnData
+    if (json.session.cookie) {
+      next.headers.append('set-cookie', json.session.cookie)
+    }
+  } else {
+    next.cookies.delete(SESSION_COOKIE_NAME)
+  }
+
+  return next
 }

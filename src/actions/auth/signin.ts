@@ -8,7 +8,6 @@ import { createServerAction } from 'zsa'
 import { signinActionSchema } from '~/domain/auth/validation'
 import { lucia } from '~/lib/auth'
 import { signInWithUsernameAndPassword } from '~/services/auth/signin'
-import { getPrimaryLair } from '~/services/i18n/lairs'
 
 export const signin = createServerAction()
   .input(signinActionSchema)
@@ -23,8 +22,7 @@ export const signin = createServerAction()
       sessionCookie.value,
       sessionCookie.attributes
     )
-    revalidateTag('auth_session')
 
-    const primaryLair = await getPrimaryLair()
-    redirect(`/dash${primaryLair ? `/${primaryLair.slug}` : ''}`)
+    revalidateTag('auth_session')
+    redirect('/dash')
   })

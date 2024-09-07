@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { SAFE_STRING_REGEX } from '~/utils/regex'
+import { SAFE_STRING_REGEX } from '~/utils/constants'
 
 export const signinActionSchema = z.object({
   username: z.string().min(3).regex(SAFE_STRING_REGEX),
