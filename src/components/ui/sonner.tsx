@@ -11,9 +11,13 @@ const Toaster = ({ ...props }: ToasterProps) => {
       className="toaster group"
       position="bottom-center"
       toastOptions={{
+        style: {
+          width: 'fit-content',
+          margin: '0 auto'
+        },
         classNames: {
           toast:
-            'group toast group-[.toaster]:bg-gradient-to-b! group-[.toaster]:from-foreground! group-[.toaster]:from-40%! group-[.toaster]:to-primary! group-[.toaster]:text-background! group-[.toaster]:ring-foreground/80! group-[.toaster]:border-radix-txt-12/80! group-[.toaster]:ring! group-[.toaster]:border! group-[.toaster]:shadow-sm! group-[.toaster]:shadow-foreground/80! group-[.toaster]:px-4! group-[.toaster]:py-2! group-[.toaster]:rounded-lg!',
+            'group toast group-[.toaster]:bg-gradient-to-b! group-[.toaster]:from-foreground! group-[.toaster]:from-40%! group-[.toaster]:to-primary! group-[.toaster]:text-background! group-[.toaster]:ring-foreground/80! group-[.toaster]:border-radix-txt-12/80! group-[.toaster]:ring! group-[.toaster]:border! group-[.toaster]:shadow-sm! group-[.toaster]:shadow-foreground/80! group-[.toaster]:px-6! group-[.toaster]:py-2! group-[.toaster]:rounded-lg!',
           title: 'text-xs text-primary-foreground/90!',
           description: 'text-muted-foreground! text-[0.75rem]'
         }

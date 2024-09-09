@@ -1,6 +1,6 @@
 'use server'
 
-import { revalidateTag } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
@@ -18,6 +18,6 @@ export const signoutAction = authedProc
       sessionCookie.value,
       sessionCookie.attributes
     )
-    revalidateTag('auth_session')
+    revalidatePath('/')
     redirect('/sign-in')
   })

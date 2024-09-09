@@ -36,7 +36,7 @@ export default function SigninForm() {
       loading: `Signing in as ${values.username}...`,
       success: ([_, e]) => {
         if (e) throw new Error(e.message)
-        return "You're signed in! Redirecting to your dashboard..."
+        return "You're signed in!"
       },
       error: (err: Error) => err.message
     })

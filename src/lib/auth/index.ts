@@ -16,7 +16,9 @@ export const lucia = new Lucia(adapter, {
       secure: process.env.NODE_ENV === 'production'
     }
   },
-  getUserAttributes: attr => ({ username: attr.username })
+  getUserAttributes: attr => ({
+    username: attr.username
+  })
 })
 
 type DatabaseUserAttributes = Pick<typeof users.$inferSelect, 'username'>
