@@ -33,10 +33,18 @@ export const users = auth$.table('users', {
   username: text('username').unique().notNull(),
   passwordHash: text('password_hash').notNull(),
 
-  createdAt: timestamp('created_at', { withTimezone: true, precision: 3 })
+  createdAt: timestamp('created_at', {
+    mode: 'date',
+    withTimezone: true,
+    precision: 3
+  })
     .defaultNow()
     .notNull(),
-  updatedAt: timestamp('updated_at', { withTimezone: true, precision: 3 })
+  updatedAt: timestamp('updated_at', {
+    mode: 'date',
+    withTimezone: true,
+    precision: 3
+  })
     .defaultNow()
     .notNull()
     .$onUpdate(() => new Date())
@@ -54,6 +62,7 @@ export const sessions = auth$.table('sessions', {
     .references(() => users.id, { onDelete: 'cascade', onUpdate: 'no action' }),
 
   expiresAt: timestamp('expires_at', {
+    mode: 'date',
     withTimezone: true,
     precision: 3
   }).notNull()
@@ -85,10 +94,15 @@ export const lairs = lingua$.table(
     primary: boolean('primary').default(false).notNull(),
 
     createdAt: timestamp('created_at', {
+      mode: 'date',
       withTimezone: true,
       precision: 3
     }).defaultNow(),
-    updatedAt: timestamp('updated_at', { withTimezone: true, precision: 3 })
+    updatedAt: timestamp('updated_at', {
+      mode: 'date',
+      withTimezone: true,
+      precision: 3
+    })
       .defaultNow()
       .$onUpdate(() => new Date())
   },
@@ -127,10 +141,15 @@ export const languages = lingua$.table(
       }),
 
     createdAt: timestamp('created_at', {
+      mode: 'date',
       withTimezone: true,
       precision: 3
     }).defaultNow(),
-    updatedAt: timestamp('updated_at', { withTimezone: true, precision: 3 })
+    updatedAt: timestamp('updated_at', {
+      mode: 'date',
+      withTimezone: true,
+      precision: 3
+    })
       .defaultNow()
       .$onUpdate(() => new Date())
   },
@@ -169,10 +188,15 @@ export const tokens = lingua$.table(
     embedding: vector('embedding', { dimensions: 1536 }),
 
     createdAt: timestamp('created_at', {
+      mode: 'date',
       withTimezone: true,
       precision: 3
     }).defaultNow(),
-    updatedAt: timestamp('updated_at', { withTimezone: true, precision: 3 })
+    updatedAt: timestamp('updated_at', {
+      mode: 'date',
+      withTimezone: true,
+      precision: 3
+    })
       .defaultNow()
       .$onUpdate(() => new Date())
   },
@@ -200,7 +224,7 @@ export const versions = lingua$.table('versions', {
   previousVersionId: bigint('previous_version_id', {
     mode: 'number'
   }).references((): AnyPgColumn => versions.id, {
-    onDelete: 'no action',
+    onDelete: 'set null',
     onUpdate: 'no action'
   }),
 
@@ -210,10 +234,15 @@ export const versions = lingua$.table('versions', {
   archived: boolean('is_archived').default(false).notNull(),
 
   createdAt: timestamp('created_at', {
+    mode: 'date',
     withTimezone: true,
     precision: 3
   }).defaultNow(),
-  updatedAt: timestamp('updated_at', { withTimezone: true, precision: 3 })
+  updatedAt: timestamp('updated_at', {
+    mode: 'date',
+    withTimezone: true,
+    precision: 3
+  })
     .defaultNow()
     .$onUpdate(() => new Date())
 })

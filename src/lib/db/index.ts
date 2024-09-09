@@ -1,5 +1,5 @@
-import { drizzle } from 'drizzle-orm/postgres-js'
-import postgres from 'postgres'
+import { drizzle } from 'drizzle-orm/node-postgres'
+import pg from 'pg'
 
 import { env } from '~/env'
 import * as schema from './schema'
@@ -9,12 +9,20 @@ import * as schema from './schema'
  * update.
  */
 const globalForDb = globalThis as unknown as {
-  conn: postgres.Sql | undefined
+  conn: pg.Pool | undefined
 }
 
-const conn = globalForDb.conn ?? postgres(env.POSTGRES_URL)
-if (env.NODE_ENV !== 'production') globalForDb.conn = conn
+const sql =
+  globalForDb.conn ??
+  new pg.Pool({
+    connectionString: env.POSTGRES_URL
+  })
 
-const db = drizzle(conn, { schema })
+if (env.NODE_ENV !== 'production') globalForDb.conn = sql
 
-export { conn, db }
+const db = drizzle(sql, {
+  schema,
+  logger: env.NODE_ENV === 'production'
+})
+
+export { sql, db }

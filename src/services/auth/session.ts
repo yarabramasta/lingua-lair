@@ -9,10 +9,5 @@ export async function getSession(sessionId: string) {
 export async function getUser(sessionId: string) {
   const { session, user } = await getSession(sessionId)
   if (!session || !user) return null
-  return {
-    sid: session.id,
-    user: {
-      username: user.username
-    }
-  }
+  return user
 }

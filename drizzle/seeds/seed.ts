@@ -94,27 +94,20 @@ async function setupExampleLair(userId: string) {
         name: 'English (United States)',
         description: 'Collection of English (United States) translations.'
       })
-      .onConflictDoNothing({ target: languages.code })
       .returning({ id: languages.id })
 
-    await tx
-      .insert(tokens)
-      .values({
-        languageId: langId,
-        key: 'hello',
-        value: 'Hello, {name}!'
-      })
-      .onConflictDoNothing({ target: tokens.key })
+    await tx.insert(tokens).values({
+      languageId: langId,
+      key: 'hello',
+      value: 'Hello, {name}!'
+    })
 
-    await tx
-      .insert(versions)
-      .values({
-        languageId: langId,
-        changelog: { hello: 'Hello, {name}!' },
-        version: 1,
-        published: true
-      })
-      .onConflictDoNothing({ target: versions.languageId })
+    await tx.insert(versions).values({
+      languageId: langId,
+      changelog: { hello: 'Hello, {name}!' },
+      version: 1,
+      published: true
+    })
   })
 
   console.info('Example lair has been set up successfully!')
