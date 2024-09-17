@@ -1,6 +1,6 @@
 {
-  "id": "d918106f-c501-4302-80ff-8c8b8a9046fc",
-  "prevId": "7ec672e3-7a60-47d6-ac84-540f23a8c787",
+  "id": "13944cb9-a192-4c97-8364-190661a922bd",
+  "prevId": "ceaf5d9e-f706-46be-a304-38c7c62a3b35",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -46,8 +46,8 @@
         }
       }
     },
-    "lingua.glossaries": {
-      "name": "glossaries",
+    "lingua.lairs": {
+      "name": "lairs",
       "schema": "lingua",
       "columns": {
         "id": {
@@ -80,6 +80,13 @@
           "primaryKey": false,
           "notNull": true
         },
+        "primary": {
+          "name": "primary",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp (3) with time zone",
@@ -96,8 +103,8 @@
         }
       },
       "indexes": {
-        "glossaries_name_index": {
-          "name": "glossaries_name_index",
+        "lairs_name_index": {
+          "name": "lairs_name_index",
           "columns": [
             {
               "expression": "name",
@@ -113,9 +120,9 @@
         }
       },
       "foreignKeys": {
-        "glossaries_user_id_users_id_fk": {
-          "name": "glossaries_user_id_users_id_fk",
-          "tableFrom": "glossaries",
+        "lairs_user_id_users_id_fk": {
+          "name": "lairs_user_id_users_id_fk",
+          "tableFrom": "lairs",
           "tableTo": "users",
           "schemaTo": "auth",
           "columnsFrom": [
@@ -130,8 +137,8 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "glossaries_slug_unique": {
-          "name": "glossaries_slug_unique",
+        "lairs_slug_unique": {
+          "name": "lairs_slug_unique",
           "nullsNotDistinct": false,
           "columns": [
             "slug"
@@ -149,8 +156,8 @@
           "primaryKey": true,
           "notNull": true
         },
-        "glossary_id": {
-          "name": "glossary_id",
+        "lair_id": {
+          "name": "lair_id",
           "type": "bigint",
           "primaryKey": false,
           "notNull": true
@@ -227,13 +234,13 @@
         }
       },
       "foreignKeys": {
-        "languages_glossary_id_glossaries_id_fk": {
-          "name": "languages_glossary_id_glossaries_id_fk",
+        "languages_lair_id_lairs_id_fk": {
+          "name": "languages_lair_id_lairs_id_fk",
           "tableFrom": "languages",
-          "tableTo": "glossaries",
+          "tableTo": "lairs",
           "schemaTo": "lingua",
           "columnsFrom": [
-            "glossary_id"
+            "lair_id"
           ],
           "columnsTo": [
             "id"
@@ -418,12 +425,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "avatar": {
-          "name": "avatar",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
         "password_hash": {
           "name": "password_hash",
           "type": "text",
@@ -548,7 +549,7 @@
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
+          "onDelete": "set null",
           "onUpdate": "no action"
         }
       },

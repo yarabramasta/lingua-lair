@@ -5,29 +5,15 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1725619468773,
-      "tag": "0000_aberrant_madame_web",
+      "when": 1726574284510,
+      "tag": "0000_warm_night_nurse",
       "breakpoints": true
     },
     {
       "idx": 1,
       "version": "7",
-      "when": 1725620888865,
-      "tag": "0001_moaning_warbound",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1725699366018,
-      "tag": "0002_dazzling_arclight",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1725874581567,
-      "tag": "0003_left_owl",
+      "when": 1726574299253,
+      "tag": "0001_rapid_vulture",
       "breakpoints": true
     }
   ]
