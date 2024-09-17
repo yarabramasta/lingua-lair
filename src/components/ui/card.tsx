@@ -1,8 +1,8 @@
 import type { VariantProps } from 'class-variance-authority'
-import * as React from 'react'
 import { cva } from 'class-variance-authority'
+import * as React from 'react'
 
-import { cn } from '~/utils/cn'
+import { cn } from '~/lib/utils/cn'
 
 const cardOuterVariants = cva('flex flex-col items-center overflow-hidden', {
   variants: {

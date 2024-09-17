@@ -1,7 +1,10 @@
 import { DrizzlePostgreSQLAdapter } from '@lucia-auth/adapter-drizzle'
 import { Lucia } from 'lucia'
 
-import { SESSION_COOKIE_LIFETIME, SESSION_COOKIE_NAME } from '~/utils/constants'
+import {
+  SESSION_COOKIE_LIFETIME,
+  SESSION_COOKIE_NAME
+} from '~/lib/utils/constants'
 import { db } from '../db'
 import { sessions, users } from '../db/schema'
 

@@ -4,8 +4,8 @@ import { cookies } from 'next/headers'
 import { ZSAError, createServerAction } from 'zsa'
 
 import { lucia } from '~/lib/auth'
+import { SESSION_COOKIE_NAME } from '~/lib/utils/constants'
 import { getSession } from '~/services/auth/session'
-import { SESSION_COOKIE_NAME } from '~/utils/constants'
 
 /**
  * Meant to be used with zsa-openapi only!

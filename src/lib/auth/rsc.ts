@@ -2,8 +2,8 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { cache } from 'react'
 
+import { SESSION_COOKIE_NAME } from '~/lib/utils/constants'
 import { getUser } from '~/services/auth/session'
-import { SESSION_COOKIE_NAME } from '~/utils/constants'
 
 export const auth = cache(async () => {
   const sessionId = cookies().get(SESSION_COOKIE_NAME)?.value

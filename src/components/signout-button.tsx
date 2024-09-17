@@ -5,7 +5,7 @@ import { forwardRef } from 'react'
 import { useServerAction } from 'zsa-react'
 
 import { signoutAction } from '~/actions/auth/signout'
-import { cn } from '~/utils/cn'
+import { cn } from '~/lib/utils/cn'
 
 interface SignoutButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,7 +23,10 @@ const SignoutButton = forwardRef<HTMLButtonElement, SignoutButtonProps>(
           type="submit"
           ref={ref}
           {...props}
-          className={cn(className)}
+          className={cn(
+            isPending && 'pointer-events-none cursor-not-allowed',
+            className
+          )}
           data-disabled={isPending}
           disabled={isPending}
         />

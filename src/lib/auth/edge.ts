@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
-import { getBaseUrl } from '~/utils/url'
+import { getBaseUrl } from '~/lib/utils/url'
 
 export const authMiddleware = async (req: NextRequest) => {
   const next = NextResponse.next()

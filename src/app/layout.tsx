@@ -3,8 +3,8 @@ import { GeistSans } from 'geist/font/sans'
 import type { Metadata, Viewport } from 'next'
 
 import { Toaster } from '~/components/ui/sonner'
-import { cn } from '~/utils/cn'
-import { getBaseUrl } from '~/utils/url'
+import { cn } from '~/lib/utils/cn'
+import { getBaseUrl } from '~/lib/utils/url'
 
 import '~/styles/globals.css'
 

@@ -1,7 +1,7 @@
 'use client'
 
-import * as React from 'react'
 import { ArrowElbowRightUp, Eye, EyeSlash } from '@phosphor-icons/react'
+import * as React from 'react'
 
 import {
   Tooltip,
@@ -9,7 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '~/components/ui/tooltip'
-import { cn } from '~/utils/cn'
+import { cn } from '~/lib/utils/cn'
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -21,9 +21,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const [showPassword, setShowPassword] = React.useState(false)
     const [capsLockActive, setCapsLockActive] = React.useState(false)
 
-    const handleKeyPress: React.KeyboardEventHandler<HTMLInputElement> = (
-      event
-    ) => {
+    const handleKeyPress: React.KeyboardEventHandler<
+      HTMLInputElement
+    > = event => {
       const capsLockOn = event.getModifierState('CapsLock')
       setCapsLockActive(capsLockOn)
     }
