@@ -1,7 +1,10 @@
 services:
   postgres:
     image: pgvector/pgvector:pg16
-    env_file: ./.env.local
+    environment:
+      POSTGRES_DB: lingua_lair
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
     volumes:
