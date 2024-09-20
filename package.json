@@ -51,7 +51,7 @@
     "zod": "^3.23.8",
     "zsa": "^0.6.0",
     "zsa-openapi": "^0.3.0",
-    "zsa-react": "^0.2.2"
+    "zsa-react": "^0.2.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.2",
