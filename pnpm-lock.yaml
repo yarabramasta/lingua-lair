@@ -118,8 +118,8 @@ importers:
         specifier: ^0.24.2
         version: 0.24.2
       jiti:
-        specifier: ^1.21.6
-        version: 1.21.6
+        specifier: ^2.0.0
+        version: 2.0.0
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -1615,12 +1615,8 @@ packages:
   invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
 
-  jiti@1.21.6:
-    resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
-    hasBin: true
-
-  jiti@2.0.0-beta.3:
-    resolution: {integrity: sha512-pmfRbVRs/7khFrSAYnSiJ8C0D5GvzkE4Ey2pAvUcJsw1ly/p+7ut27jbJrjY79BpAJQJ4gXYFtK6d1Aub+9baQ==}
+  jiti@2.0.0:
+    resolution: {integrity: sha512-CJ7e7Abb779OTRv3lomfp7Mns/Sy1+U4pcAx5VbjxCZD5ZM/VJaXPpPjNKjtSvWQy/H86E49REXR34dl1JEz9w==}
     hasBin: true
 
   js-tokens@4.0.0:
@@ -2866,7 +2862,7 @@ snapshots:
   '@tailwindcss/node@4.0.0-alpha.25':
     dependencies:
       enhanced-resolve: 5.17.1
-      jiti: 2.0.0-beta.3
+      jiti: 2.0.0
 
   '@tailwindcss/oxide-android-arm64@4.0.0-alpha.25':
     optional: true
@@ -3112,9 +3108,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  jiti@1.21.6: {}
-
-  jiti@2.0.0-beta.3: {}
+  jiti@2.0.0: {}
 
   js-tokens@4.0.0: {}
 
