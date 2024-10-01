@@ -54,7 +54,7 @@
     "zsa-react": "^0.2.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.2",
+    "@biomejs/biome": "^1.9.3",
     "@tailwindcss/postcss": "^4.0.0-alpha.25",
     "@types/node": "^22.7.4",
     "@types/pg": "^8.11.10",
