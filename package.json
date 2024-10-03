@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",
-    "@tailwindcss/postcss": "^4.0.0-alpha.25",
+    "@tailwindcss/postcss": "^4.0.0-alpha.26",
     "@types/node": "^22.7.4",
     "@types/pg": "^8.11.10",
     "@types/react": "^18.3.11",
