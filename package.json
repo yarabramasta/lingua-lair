@@ -61,7 +61,7 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "drizzle-kit": "^0.24.2",
-    "jiti": "^2.1.0",
+    "jiti": "^2.1.1",
     "postcss": "^8.4.47",
     "tailwindcss": "^4.0.0-alpha.25",
     "tsx": "^4.19.1",
