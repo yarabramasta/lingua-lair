@@ -118,8 +118,8 @@ importers:
         specifier: ^0.24.2
         version: 0.24.2
       jiti:
-        specifier: ^2.3.2
-        version: 2.3.2
+        specifier: ^2.3.3
+        version: 2.3.3
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -1630,8 +1630,8 @@ packages:
   invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
 
-  jiti@2.3.2:
-    resolution: {integrity: sha512-9ZLDe7kYLCyWTAP6EIyg3B4ZuHy5W0gdy6y1rgrWrAOpTrUU+vKuKa1+OXB7MBkujyvm6a2b7i0ETHQDbgY98A==}
+  jiti@2.3.3:
+    resolution: {integrity: sha512-EX4oNDwcXSivPrw2qKH2LB5PoFxEvgtv2JgwW0bU858HoLQ+kutSvjLMUqBd0PeJYEinLWhoI9Ol0eYMqj/wNQ==}
     hasBin: true
 
   js-tokens@4.0.0:
@@ -2885,7 +2885,7 @@ snapshots:
   '@tailwindcss/node@4.0.0-alpha.26':
     dependencies:
       enhanced-resolve: 5.17.1
-      jiti: 2.3.2
+      jiti: 2.3.3
 
   '@tailwindcss/oxide-android-arm64@4.0.0-alpha.26':
     optional: true
@@ -3132,7 +3132,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  jiti@2.3.2: {}
+  jiti@2.3.3: {}
 
   js-tokens@4.0.0: {}
 
