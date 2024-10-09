@@ -65,7 +65,7 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^4.0.0-alpha.26",
     "tsx": "^4.19.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   },
   "engines": {
     "node": ">=20.18.0",
