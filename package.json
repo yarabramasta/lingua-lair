@@ -63,7 +63,7 @@
     "drizzle-kit": "^0.25.0",
     "jiti": "^2.3.3",
     "postcss": "^8.4.47",
-    "tailwindcss": "^4.0.0-alpha.26",
+    "tailwindcss": "^4.0.0-alpha.27",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
   },
