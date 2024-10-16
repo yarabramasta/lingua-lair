@@ -60,7 +60,7 @@
     "@types/pg": "^8.11.10",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
-    "drizzle-kit": "^0.26.1",
+    "drizzle-kit": "^0.26.2",
     "jiti": "^2.3.3",
     "postcss": "^8.4.47",
     "tailwindcss": "^4.0.0-alpha.27",
