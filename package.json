@@ -58,7 +58,7 @@
     "@tailwindcss/postcss": "^4.0.0-alpha.28",
     "@types/node": "^22.7.9",
     "@types/pg": "^8.11.10",
-    "@types/react": "^18.3.11",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "drizzle-kit": "^0.26.2",
     "jiti": "^2.3.3",
