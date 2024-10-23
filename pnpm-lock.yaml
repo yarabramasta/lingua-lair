@@ -124,8 +124,8 @@ importers:
         specifier: ^8.4.47
         version: 8.4.47
       tailwindcss:
-        specifier: ^4.0.0-alpha.28
-        version: 4.0.0-alpha.28
+        specifier: ^4.0.0-alpha.29
+        version: 4.0.0-alpha.29
       tsx:
         specifier: ^4.19.1
         version: 4.19.1
@@ -2095,9 +2095,6 @@ packages:
   tailwind-merge@2.5.4:
     resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
 
-  tailwindcss@4.0.0-alpha.28:
-    resolution: {integrity: sha512-q8TwTL67Csg5p+VWsVdzWyQPlMTd5F5nDerUAo1i+05Pf6QZ3bzL7M92QUxiPc1MwW02dd6spSs9F20/daZozg==}
-
   tailwindcss@4.0.0-alpha.29:
     resolution: {integrity: sha512-yYirQ1zh370k1J4SAbE+1uhE5x0+c8xCv2ffbokbUiqmLL8NEVoFMYkZw1hfj/kafiC2au9aOB2xHZ1dO1g10A==}
 
@@ -3715,8 +3712,6 @@ snapshots:
       react: 18.3.1
 
   tailwind-merge@2.5.4: {}
-
-  tailwindcss@4.0.0-alpha.28: {}
 
   tailwindcss@4.0.0-alpha.29: {}
 
